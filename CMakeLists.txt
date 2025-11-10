@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt6 COMPONENTS Widgets REQUIRED)
 find_package(LIBPARTED REQUIRED)
 
 add_executable(rufusl
@@ -25,6 +25,7 @@ add_executable(rufusl
     ui/devicecombobox.cpp
     ui/errordialog.cpp
     ui/log.cpp
+    ui/log.h
     ui/rufuswindow.cpp
 )
 
@@ -40,4 +41,4 @@ include_directories(
     ${LIBPARTED_INCLUDE_DIR}
 )
 
-target_link_libraries(rufusl Qt5::Widgets ${LIBPARTED_LIBS})
+target_link_libraries(rufusl Qt6::Widgets ${LIBPARTED_LIBS})
